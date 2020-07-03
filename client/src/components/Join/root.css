@@ -1,0 +1,44 @@
+.joinInner{
+    text-align: center;
+}
+
+.joinOuter{
+    margin-top: 100px;
+    background-color: darkorange;
+    height: 500px;
+}
+.heading{
+    color: rgba(0, 2, 1, 0.555);
+    margin-top: 100px;
+    background-color: brown;
+    padding: 50px;
+    font-size: 100px;
+    border-radius: 5px;
+    font-family: "Lucida Console", Courier, monospace;
+}
+.button{
+    color: rgb(250, 248, 248);
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: rgb(2, 2, 2);
+    border: none;
+    font-size: 16px;
+    padding: 5px 70px;
+    width: 500px;
+    transition-duration: 0.7s;
+    cursor: pointer;
+}
+
+.input{
+    margin-top: 20px;
+    border-radius: 5px;
+    border-color: black;
+    width: 500px;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+}
+.button:hover{
+    background-color: rgb(245, 247, 244);
+    color: black;
+}
