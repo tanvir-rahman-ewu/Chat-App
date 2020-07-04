@@ -15,7 +15,18 @@ let Chat = ({ location }) => {
         const {name, room} = queryString.parse(location.search) 
         setName(name);
         steRoom(room);  
-    })
+
+        socket.emit('join', {name, room}, () => {
+
+        })
+
+        return () => {
+            socket.emit('disconnect');
+
+            socket.off();
+        }
+
+    }, [ENDPOINT, location.search])
 
     return(
         <div>
