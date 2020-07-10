@@ -10,14 +10,14 @@ let Join = () => {
         <div className="joinOuter">
             <div className="joinInner">
                 <div className="heading"><h1>JOIN</h1></div>
-                <br></br>
-                <br></br>
-                <br></br>
-                <div><input placeholder="Enter Name" className="input" type="text" onChange={ event => {setName(event.target.value)}}/></div>
-                <div><input placeholder="Enter Room" className="input" type="text" onChange={ event => {setRomm(event.target.value)}}/></div>
-                <Link onClick={ event => (!name || !room) ? event.preventDefault(): null } to={`/chat?name=${name}&room=${room}`}>
-                    <button className="button" type="submit">Sign </button>
-                </Link>
+                <div className="inputBox">
+                    <div><input placeholder="Enter Name" className="joinInput" type="text" onChange={event => { setName(event.target.value) }} /></div>
+                    <div><input placeholder="Enter Room" className="joinInput" type="text" onChange={event => { setRomm(event.target.value) }} /></div>
+                    <Link onClick={event => (!name || !room) ? event.preventDefault() : null} to={`/chat?name=${name}&room=${room}`}>
+                        <button className="button" type="submit">Sign In</button>
+                    </Link>
+                </div>
+
             </div>
         </div>
     )

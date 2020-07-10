@@ -21,7 +21,11 @@ io.on('connection', socket => {
 
        const {error, user} = addUser({id : socket.id, name, room});
 
-       if(error) return callback(error);
+       if(error)
+       {
+            console.log("error : "  + error)
+            return callback(error);
+       } 
 
        socket.emit('message', { user : 'admin', text : `${user.name}, welcome to the ${user.room}`}) //admin generated msg
 

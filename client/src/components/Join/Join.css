@@ -1,3 +1,6 @@
+*{
+    text-align: center;
+}
 .joinInner{
     text-align: center;
 }
@@ -6,6 +9,7 @@
     margin-top: 100px;
     background-color: rgb(112, 112, 112);
     height: 500px;
+    width: 100%;
 }
 .heading{
     color: rgba(0, 2, 1, 0.555);
@@ -24,12 +28,12 @@
     border: none;
     font-size: 16px;
     padding: 5px 70px;
-    width: 500px;
-    transition-duration: 0.7s;
+    width: 30%;
+    transition-duration: 0.4s;
     cursor: pointer;
 }
 
-.input{
+.joinInput{
     margin-top: 20px;
     border-radius: 5px;
     border-color: black;
@@ -41,4 +45,8 @@
 .button:hover{
     background-color: rgb(245, 247, 244);
     color: black;
+    width: 50%
+}
+.inputBox{
+    margin-top: 70px;
 }

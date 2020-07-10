@@ -5,6 +5,7 @@ import './Chat.css'
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
 import Messages from '../Messages/Messages'
+import Join from '../Join/Join';
 
 let socket;
 
@@ -15,6 +16,7 @@ let Chat = ({ location }) => {
     const [users, setUsers] = useState('');
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
+    const [redirect, setRedirect] = useState(false);
 
     const ENDPOINT = 'localhost:5000' //server end point 
 
@@ -27,8 +29,11 @@ let Chat = ({ location }) => {
         setName(name); //setState
         setRoom(room); //setState
 
-        socket.emit('join', {name, room}, () => {
-
+        socket.emit('join', {name, room}, (error)  => {
+            if(error)
+            {
+                setRedirect(true);
+            }
         })
 
         return () => {
@@ -60,16 +65,25 @@ let Chat = ({ location }) => {
         }
     }
     //console.log(messages);
-
-    return(
-       <div className="outerContainer">
-           <div className="container">
-               <InfoBar room={room}/>
-               <Messages messages = {messages} name={name} />
-               <Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>
-           </div>
-       </div>
-    )
+    if(!redirect)
+    {
+        return(
+            <div className="outerContainer">
+                <div className="container">
+                    <InfoBar room={room}/>
+                    <Messages messages = {messages} name={name} />
+                    <Input message={message} setMessage={setMessage} sendMessage={sendMessage}/>
+                </div>
+            </div>
+         )
+    }
+    else{
+        alert('error')
+        return(
+            <Join></Join>
+        )
+    }
+    
 }
 
 export default Chat;
