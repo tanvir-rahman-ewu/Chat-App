@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 5000;
 const app = express();
 const server = http.createServer(app); 
 const io = socketio(server);
+app.use(cors());
 
 /* Importing Helper Function */
 const {addUser, getUser, removeUser, getUsersInRoom} = require('./User'); 
@@ -23,7 +24,7 @@ io.on('connection', socket => {
 
        if(error)
        {
-            console.log("error : "  + error)
+           // console.log("error : "  + error)
             return callback(error);
        } 
 
@@ -60,7 +61,6 @@ io.on('connection', socket => {
 })
 
 app.use(router);
-app.use(cors());
 
 /*Listening at port 5000*/
 server.listen(PORT, () =>{

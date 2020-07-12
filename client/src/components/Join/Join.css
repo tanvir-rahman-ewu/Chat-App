@@ -1,36 +1,38 @@
 *{
     text-align: center;
 }
+
 .joinInner{
     text-align: center;
 }
 
 .joinOuter{
     margin-top: 100px;
-    background-color: rgb(112, 112, 112);
+    background-color: rgb(5, 5, 5);
     height: 500px;
     width: 100%;
 }
 .heading{
     color: rgba(0, 2, 1, 0.555);
     margin-top: 100px;
-    background-color: brown;
+    background-color: rgb(34, 159, 231);
     padding: 50px;
     font-size: 100px;
-    border-radius: 5px;
     font-family: "Lucida Console", Courier, monospace;
 }
 .button{
-    color: rgb(250, 248, 248);
     margin-top: 20px;
-    border-radius: 8px;
-    background-color: rgb(2, 2, 2);
+    text-decoration: none;
     border: none;
     font-size: 16px;
-    padding: 5px 70px;
-    width: 30%;
-    transition-duration: 0.4s;
+    padding: 6px 50px;
+    transition-duration: 0.10s;
+    transition: 0.5s;
     cursor: pointer;
+    background-color: rgb(114, 165, 212);
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
 }
 
 .joinInput{
@@ -43,9 +45,8 @@
     border: none;
 }
 .button:hover{
-    background-color: rgb(245, 247, 244);
+    background-color: rgb(14, 113, 170);
     color: black;
-    width: 50%
 }
 .inputBox{
     margin-top: 70px;
